@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Astrophotography Portfolio</title>
-  <meta name="description" content="A portfolio of deep-sky astrophotography: galaxies, nebulae and star clusters.">
+  <title>Home | [Your Name] – Communications Technology Portfolio</title>
+  <meta name="description" content="Communications Technology portfolio: photography, animation and capstone project.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
@@ -15,64 +15,54 @@
 
   <header class="site-header">
     <nav class="nav">
-      <a href="#top" class="brand">Deep Sky <span>Portfolio</span></a>
+      <a href="index.html" class="brand">[Your Name] <span>Portfolio</span></a>
       <ul class="nav-links">
-        <li><a href="#gallery">Gallery</a></li>
-        <li><a href="#about">About</a></li>
+        <li><a href="index.html" class="current" aria-current="page">Home</a></li>
+        <li><a href="capstone.html">Capstone</a></li>
+        <li><a href="photography.html">Photography</a></li>
+        <li><a href="animation.html">Animation</a></li>
       </ul>
     </nav>
   </header>
 
-  <main id="top">
+  <main>
     <section class="hero">
-      <p class="eyebrow">Astrophotography</p>
-      <h1>Light from the deep&nbsp;sky</h1>
-      <p class="lede">Galaxies, nebulae and star clusters, captured photon by photon from Earth.</p>
-      <a href="#gallery" class="btn">View the gallery</a>
+      <p class="eyebrow">Communications Technology</p>
+      <h1>[Your Name]</h1>
+      <p class="lede">Media creator working in photography, video, graphic design and animation.</p>
+      <a href="#about" class="btn">About me</a>
     </section>
 
-    <section id="gallery" class="gallery-section">
-      <div class="section-head">
-        <h2>Gallery</h2>
-        <div class="filters" role="tablist" aria-label="Filter by object type"></div>
+    <section id="about" class="content">
+      <h2 class="sub-head" style="margin-top:0">About me</h2>
+      <div class="about-grid">
+        <div class="portrait">Optional professional portrait<br>(add images/portrait.jpg)</div>
+        <div>
+          <p>I'm a media creator with an interest in [photography, video, graphic design, animation]. I enjoy [what you like most about it], and I'm especially drawn to astrophotography, where long exposures reveal what the eye cannot see.</p>
+          <p>My goals are to [your post-secondary or career goals, e.g. study media arts, work in video production]. This portfolio documents my design process and major accomplishments from this course.</p>
+          <ul class="tags">
+            <li>Photography</li><li>Lightroom</li><li>Astrophotography</li><li>Animation</li><li>Video editing</li><li>Graphic design</li>
+          </ul>
+          <p class="todo">Replace the bracketed text above with your own introduction.</p>
+        </div>
       </div>
-      <div class="gallery" id="gallery-grid"></div>
+
+      <h2 class="sub-head">Explore the portfolio</h2>
+      <div class="tiles">
+        <a class="tile" href="capstone.html"><h3>Capstone project</h3><p>Independent study plan, process notes and Milestone #1 deliverables.</p></a>
+        <a class="tile" href="photography.html"><h3>Photography</h3><p>Exposure triangle, Lightroom edits and my astrophotography gallery.</p></a>
+        <a class="tile" href="animation.html"><h3>Animation</h3><p>Storyboards, drafts and finished animation and video edits.</p></a>
+      </div>
     </section>
 
-    <section id="about" class="about">
-      <h2>About</h2>
-      <p>Every image here is the result of hours of exposure, stacked and processed to reveal structure far too faint for the eye. Select any image to see it larger, along with details about the object.</p>
-    </section>
   </main>
 
   <footer class="site-footer">
-    <p>&copy; <span id="year"></span> Deep Sky Portfolio. All images are the property of the photographer.</p>
+    <p>&copy; <span id="year"></span> [Your Name] – Communications Technology Portfolio. All work is the property of the creator.</p>
   </footer>
 
-  <!-- Lightbox -->
-  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-labelledby="lb-title" hidden>
-    <button class="lb-close" id="lb-close" aria-label="Close">&times;</button>
-    <button class="lb-nav lb-prev" id="lb-prev" aria-label="Previous image">&#8249;</button>
-    <button class="lb-nav lb-next" id="lb-next" aria-label="Next image">&#8250;</button>
-    <div class="lb-inner">
-      <figure class="lb-figure">
-        <img id="lb-img" src="" alt="">
-      </figure>
-      <aside class="lb-info">
-        <p class="lb-catalog" id="lb-catalog"></p>
-        <h3 id="lb-title"></h3>
-        <p class="lb-type" id="lb-type"></p>
-        <p class="lb-desc" id="lb-desc"></p>
-        <dl class="lb-facts" id="lb-facts"></dl>
-        <div class="lb-capture" id="lb-capture-wrap">
-          <h4>Capture details</h4>
-          <dl class="lb-facts" id="lb-capture"></dl>
-        </div>
-      </aside>
-    </div>
-  </div>
-
   <script src="js/portfolio.js"></script>
-  <script src="js/main.js"></script>
+  <script src="js/site.js"></script>
+  <script src="js/cursor.js"></script>
 </body>
 </html>

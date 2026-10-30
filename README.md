@@ -10,6 +10,22 @@ Open `index.html` in a browser, or serve the folder:
 python3 -m http.server
 ```
 
+## Pages
+
+- `index.html`: Home / About me
+- `capstone.html`: Independent study plan, Milestone #1 and #2
+- `photography.html`: exposure triangle, Lightroom edits, astrophotography gallery with enlarge-and-info lightbox
+- `animation.html`: storyboards, drafts and video embeds
+
+Each milestone block has Summary, Design process, Final export and Reflection.
+
+## Using it with Google Sites
+
+Google Sites does not allow custom site-wide JavaScript, so the cursor effects only run
+when this site is hosted itself (e.g. GitHub Pages). To use it in your Google Site, host
+this site, then on each Google Sites page choose Insert > Embed > By URL (or paste HTML).
+The cursor effects will work inside the embedded frame.
+
 ## Adding a new image
 
 1. Put the image in `images/`.
