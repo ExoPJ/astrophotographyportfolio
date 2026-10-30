@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Astrophotography Portfolio</title>
+  <meta name="description" content="A portfolio of deep-sky astrophotography: galaxies, nebulae and star clusters.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <canvas id="starfield" aria-hidden="true"></canvas>
+
+  <header class="site-header">
+    <nav class="nav">
+      <a href="#top" class="brand">Deep Sky <span>Portfolio</span></a>
+      <ul class="nav-links">
+        <li><a href="#gallery">Gallery</a></li>
+        <li><a href="#about">About</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <p class="eyebrow">Astrophotography</p>
+      <h1>Light from the deep&nbsp;sky</h1>
+      <p class="lede">Galaxies, nebulae and star clusters, captured photon by photon from Earth.</p>
+      <a href="#gallery" class="btn">View the gallery</a>
+    </section>
+
+    <section id="gallery" class="gallery-section">
+      <div class="section-head">
+        <h2>Gallery</h2>
+        <div class="filters" role="tablist" aria-label="Filter by object type"></div>
+      </div>
+      <div class="gallery" id="gallery-grid"></div>
+    </section>
+
+    <section id="about" class="about">
+      <h2>About</h2>
+      <p>Every image here is the result of hours of exposure, stacked and processed to reveal structure far too faint for the eye. Select any image to see it larger, along with details about the object.</p>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>&copy; <span id="year"></span> Deep Sky Portfolio. All images are the property of the photographer.</p>
+  </footer>
+
+  <!-- Lightbox -->
+  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-labelledby="lb-title" hidden>
+    <button class="lb-close" id="lb-close" aria-label="Close">&times;</button>
+    <button class="lb-nav lb-prev" id="lb-prev" aria-label="Previous image">&#8249;</button>
+    <button class="lb-nav lb-next" id="lb-next" aria-label="Next image">&#8250;</button>
+    <div class="lb-inner">
+      <figure class="lb-figure">
+        <img id="lb-img" src="" alt="">
+      </figure>
+      <aside class="lb-info">
+        <p class="lb-catalog" id="lb-catalog"></p>
+        <h3 id="lb-title"></h3>
+        <p class="lb-type" id="lb-type"></p>
+        <p class="lb-desc" id="lb-desc"></p>
+        <dl class="lb-facts" id="lb-facts"></dl>
+        <div class="lb-capture" id="lb-capture-wrap">
+          <h4>Capture details</h4>
+          <dl class="lb-facts" id="lb-capture"></dl>
+        </div>
+      </aside>
+    </div>
+  </div>
+
+  <script src="js/portfolio.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
