@@ -14,7 +14,7 @@ python3 -m http.server
 
 - `index.html`: Home
 - `capstone.html`: Milestone #1 (M33 image) and Milestone #2 (M31 session plan and satellite essay)
-- `photography.html`: exposure triangle, Lightroom edits, astrophotography gallery with enlarge-and-info lightbox
+- `photography.html`: Lightroom light, colour and effects edit (before/after slider), astrophotography gallery with enlarge-and-info lightbox
 
 Each milestone block has Summary, Design process, Final export and Reflection.
 

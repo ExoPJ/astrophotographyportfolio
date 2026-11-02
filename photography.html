@@ -28,18 +28,46 @@
     <section class="page-hero">
       <p class="eyebrow">Technical showcase</p>
       <h1>Photography</h1>
-      <p class="lede">Exposure triangle exercises, Lightroom edit sets and astrophotography.</p>
+      <p class="lede">Lightroom edits and astrophotography.</p>
     </section>
     <div class="content">
-    <article class="milestone">
-      <header><span class="badge">Unit · Exposure</span><h2>Exposure triangle exercises</h2></header>
+    <article class="milestone" id="lightroom-controls">
+      <header><span class="badge">Unit &middot; Lightroom</span><h2>Light, Colour &amp; Effect Controls in Lightroom</h2></header>
       <div class="ms-grid">
-        <section class="ms-part"><h3>Summary</h3><p class="todo">What was the assignment? (e.g. demonstrate aperture, shutter speed and ISO)</p></section>
-        <section class="ms-part"><h3>Reflection</h3><p class="todo">2&ndash;3 sentences reflecting on technique and what you would refine.</p></section>
-        <section class="ms-part wide"><h3>Design process / progress</h3><div class="placeholder">Add settings notes and test shots (aperture / shutter / ISO)</div></section>
-        <section class="ms-part wide"><h3>Final high-res export</h3><div class="placeholder">Best exposure triangle photos</div></section>
+        <section class="ms-part"><h3>Summary</h3>
+          <p>An editing exercise using Lightroom's Light, Colour and Effects panels on a photo of a memorial cross, taken against a dramatic cloudy sky. The goal was to bring the clouds, stonework and grass to life while keeping the cross as a strong silhouette.</p>
+        </section>
+        <section class="ms-part"><h3>Reflection</h3>
+          <p class="todo">2&ndash;3 sentences: skills used, challenges overcome, and what you would refine next time.</p>
+        </section>
+        <section class="ms-part wide"><h3>Design process / progress</h3>
+          <p>Drag the slider to compare the original with the edit.</p>
+          <div class="compare" id="compare">
+            <img class="compare-img" src="images/lightroom-before.jpg" alt="Before: unedited photo of the memorial cross" loading="lazy">
+            <div class="compare-after"><img class="compare-img" src="images/lightroom-after.jpg" alt="After: edited photo of the memorial cross" loading="lazy"></div>
+            <span class="compare-label left">Before</span>
+            <span class="compare-label right">After</span>
+            <div class="compare-handle" aria-hidden="true"></div>
+            <input class="compare-range" type="range" min="0" max="100" value="50" aria-label="Before and after comparison slider">
+          </div>
+          <h4 class="doc-h">Edit notes: what changed</h4>
+          <ul>
+            <li><strong>Light:</strong> Shadows were lifted so detail returns to the grass and the base of the monument, which were close to black in the original. The bright sky was kept in check so the cloud texture stays intact.</li>
+            <li><strong>Colour:</strong> Vibrance and saturation were raised. The grass went from a dull, dark olive to a rich green, and the blues in the gaps between the clouds became deeper and cleaner.</li>
+            <li><strong>Colour (warmth):</strong> The warm glow around the sun behind the cross is stronger, which adds a point of interest next to the silhouette.</li>
+            <li><strong>Effects:</strong> Clarity / texture adds punch to the cloud edges and the stone steps, making the whole frame feel sharper and more dimensional.</li>
+          </ul>
+          <p class="todo">These notes are based on comparing the two images. Edit them to match the exact panels and slider values you used in Lightroom.</p>
+        </section>
+        <section class="ms-part wide"><h3>Final high-res export</h3>
+          <figure class="ms-figure">
+            <img src="images/lightroom-after.jpg" alt="Final edited photo of the memorial cross" loading="lazy">
+            <figcaption>Final result: memorial cross after Light, Colour and Effects adjustments.</figcaption>
+          </figure>
+        </section>
       </div>
     </article>
+
     <article class="milestone">
       <header><span class="badge">Unit · Lightroom</span><h2>Lightroom edits: Vibrance and Black &amp; White</h2></header>
       <div class="ms-grid">
@@ -89,6 +117,7 @@
   <script src="js/portfolio.js"></script>
   <script src="js/site.js"></script>
   <script src="js/gallery.js"></script>
+  <script src="js/compare.js"></script>
   <script src="js/cursor.js"></script>
 </body>
 </html>

@@ -1,13 +1,10 @@
 /* Cursor effects: glowing dot, trailing ring, stardust trail, click burst.
- * Only runs on devices with a mouse, and respects "reduce motion". */
+ * Starts on the first real mouse movement (so touch screens are unaffected).
+ * With "reduce motion" on, the dot and ring stay but the particles are off. */
 (function () {
   "use strict";
 
-  const fine = window.matchMedia("(hover: hover) and (pointer: fine)").matches;
   const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-  if (!fine || reduce) return;
-
-  document.documentElement.classList.add("custom-cursor");
 
   const dot = document.createElement("div");
   dot.className = "cursor-dot";
@@ -50,16 +47,18 @@
     }
   }
 
-  addEventListener("mousemove", (e) => {
+  addEventListener("pointermove", (e) => {
+    if (e.pointerType === "touch") return;
     mx = e.clientX;
     my = e.clientY;
     if (!started) {
       started = true;
       rx = mx; ry = my;
+      document.documentElement.classList.add("custom-cursor");
       document.body.classList.add("cursor-active");
     }
     const dist = Math.hypot(mx - lastX, my - lastY);
-    if (dist > 6) {
+    if (!reduce && dist > 6) {
       spawn(mx, my, 0.8, Math.min(3, 1 + (dist / 25) | 0), 1);
       lastX = mx; lastY = my;
     }
@@ -67,7 +66,7 @@
 
   addEventListener("mousedown", () => {
     ring.classList.add("press");
-    spawn(mx, my, 4.5, 28, 1);
+    if (!reduce) spawn(mx, my, 4.5, 28, 1);
   });
   addEventListener("mouseup", () => ring.classList.remove("press"));
   document.addEventListener("mouseleave", () => document.body.classList.remove("cursor-active"));
