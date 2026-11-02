@@ -13,9 +13,8 @@ python3 -m http.server
 ## Pages
 
 - `index.html`: Home / About me
-- `capstone.html`: Independent study plan, Milestone #1 and #2
+- `capstone.html`: Milestone #1 (M33 image) and Milestone #2 (M31 session plan and satellite essay)
 - `photography.html`: exposure triangle, Lightroom edits, astrophotography gallery with enlarge-and-info lightbox
-- `animation.html`: storyboards, drafts and video embeds
 
 Each milestone block has Summary, Design process, Final export and Reflection.
 
