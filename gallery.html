@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Gallery | Ryan – Communications Technology Portfolio</title>
+  <meta name="description" content="Communications Technology portfolio: photography, astrophotography and capstone project.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css?v=5">
+</head>
+<body>
+  <canvas id="starfield" aria-hidden="true"></canvas>
+
+  <header class="site-header">
+    <nav class="nav">
+      <a href="index.html" class="brand">Ryan <span>Portfolio</span></a>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="capstone.html">Capstone</a></li>
+        <li><a href="photography.html">Photography</a></li>
+        <li><a href="gallery.html" class="current" aria-current="page">Gallery</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="page-hero">
+      <p class="eyebrow">Astrophotography</p>
+      <h1>Gallery</h1>
+      <p class="lede">Deep-sky images, shared so more people can see the beauty of space.</p>
+    </section>
+
+    <section id="gallery" class="gallery-section">
+      <div class="section-head">
+        <h2>Astrophotography gallery</h2>
+        <div class="filters" role="tablist" aria-label="Filter by object type"></div>
+      </div>
+      <p style="margin-top:-1rem;margin-bottom:2rem;color:var(--text-muted)">Select an image to enlarge it and read about the object.</p>
+      <div class="gallery" id="gallery-grid"></div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <p>&copy; <span id="year"></span> ExoPJ</p>
+  </footer>
+
+  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-labelledby="lb-title" hidden>
+    <button class="lb-close" id="lb-close" aria-label="Close">&times;</button>
+    <button class="lb-nav lb-prev" id="lb-prev" aria-label="Previous image">&#8249;</button>
+    <button class="lb-nav lb-next" id="lb-next" aria-label="Next image">&#8250;</button>
+    <div class="lb-inner">
+      <figure class="lb-figure"><img id="lb-img" src="" alt=""></figure>
+      <aside class="lb-info">
+        <p class="lb-catalog" id="lb-catalog"></p>
+        <h3 id="lb-title"></h3>
+        <p class="lb-type" id="lb-type"></p>
+        <p class="lb-desc" id="lb-desc"></p>
+        <dl class="lb-facts" id="lb-facts"></dl>
+        <div class="lb-capture" id="lb-capture-wrap">
+          <h4>Capture details</h4>
+          <dl class="lb-facts" id="lb-capture"></dl>
+        </div>
+      </aside>
+    </div>
+  </div>
+
+  <script src="js/portfolio.js?v=5"></script>
+  <script src="js/site.js?v=5"></script>
+  <script src="js/gallery.js?v=5"></script>
+  <script src="js/cursor.js?v=5"></script>
+</body>
+</html>
