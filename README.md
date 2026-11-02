@@ -12,7 +12,7 @@ python3 -m http.server
 
 ## Pages
 
-- `index.html`: Home / About me
+- `index.html`: Home
 - `capstone.html`: Milestone #1 (M33 image) and Milestone #2 (M31 session plan and satellite essay)
 - `photography.html`: exposure triangle, Lightroom edits, astrophotography gallery with enlarge-and-info lightbox
 
