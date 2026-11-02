@@ -86,9 +86,9 @@
 
     if (reduceMotion) return;
 
-    if (t >= nextMeteor) {
+    if (t >= nextMeteor && meteors.length < 16) {
       spawnMeteor();
-      nextMeteor = t + Math.random() * 1400 + 500;
+      nextMeteor = t + Math.random() * 350 + 150;
     }
     for (let i = meteors.length - 1; i >= 0; i--) {
       const m = meteors[i];
