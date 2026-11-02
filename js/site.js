@@ -5,6 +5,7 @@
   if (yr) yr.textContent = new Date().getFullYear();
 
   // ---- Starfield with small meteors falling diagonally ----
+  // Meteors play even with "reduce motion" on; only the star twinkle is turned off.
   const canvas = document.getElementById("starfield");
   const ctx = canvas.getContext("2d");
   const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
@@ -39,9 +40,9 @@
       y: startsOnTop ? -20 : Math.random() * innerHeight * 0.5,
       vx: -Math.cos(angle) * speed,
       vy: Math.sin(angle) * speed,
-      len: Math.random() * 70 + 50,
-      w: Math.random() * 0.8 + 0.8,
-      a: Math.random() * 0.4 + 0.5,
+      len: Math.random() * 110 + 90,
+      w: Math.random() * 0.8 + 1,
+      a: Math.random() * 0.3 + 0.7,
     });
   }
 
@@ -51,7 +52,7 @@
     const ty = m.y - (m.vy / speed) * m.len;
     const g = ctx.createLinearGradient(m.x, m.y, tx, ty);
     g.addColorStop(0, `rgba(235, 242, 255, ${m.a})`);
-    g.addColorStop(0.4, `rgba(127, 168, 255, ${m.a * 0.4})`);
+    g.addColorStop(0.35, `rgba(150, 185, 255, ${m.a * 0.55})`);
     g.addColorStop(1, "rgba(127, 168, 255, 0)");
     ctx.globalAlpha = 1;
     ctx.strokeStyle = g;
@@ -84,8 +85,6 @@
       ctx.fill();
     }
 
-    if (reduceMotion) return;
-
     if (t >= nextMeteor && meteors.length < 16) {
       spawnMeteor();
       nextMeteor = t + Math.random() * 350 + 150;
@@ -103,10 +102,7 @@
     requestAnimationFrame(draw);
   }
 
-  addEventListener("resize", () => {
-    resize();
-    if (reduceMotion) draw(0);
-  });
+  addEventListener("resize", resize);
   resize();
   requestAnimationFrame(draw);
 })();
