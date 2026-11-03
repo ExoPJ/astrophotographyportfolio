@@ -722,6 +722,15 @@ h2 {
   transform: translateY(-30%) rotate(-135deg);
 }
 
+.due {
+  margin-left: auto;
+  font-size: 0.75rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  white-space: nowrap;
+}
+
 .milestone > summary:focus-visible {
   outline: 2px solid var(--accent);
   outline-offset: 6px;
