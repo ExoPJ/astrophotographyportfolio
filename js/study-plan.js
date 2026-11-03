@@ -296,17 +296,25 @@ const STUDY_PLAN = {
     return d;
   }
 
-  const past = [];
-  for (let k = 0; k < i && k < P.entries.length; k++) past.push(weekBlock(P.entries[k], k - i));
-  const cur = P.entries[i] ? [weekBlock(P.entries[i], 0)] : [];
-  const next = P.entries[i + 1] ? [weekBlock(P.entries[i + 1], 1)] : [];
+  const label = (k) => (P.entries[k] ? P.entries[k].label + ": " + P.entries[k].title : "");
+  const one = (k, offset) => (P.entries[k] ? [weekBlock(P.entries[k], offset)] : []);
 
-  const footer = el("p", "sp-foot", P.meeting + " · " + P.log);
+  const earlier = [];
+  for (let k = 0; k < i - 1 && k < P.entries.length; k++) earlier.push(weekBlock(P.entries[k], k - i));
 
-  root.append(
-    dropdown("Last weeks", "Past weeks", past.length + (past.length === 1 ? " week" : " weeks"), past, false),
-    dropdown("This week", P.entries[i] ? P.entries[i].label + ": " + P.entries[i].title : "Current week", weekRange(0), cur, true),
-    dropdown("Next week", P.entries[i + 1] ? P.entries[i + 1].label + ": " + P.entries[i + 1].title : "Next week", weekRange(1), next, false),
-    footer
-  );
+  // Banner so it is obvious which week is current.
+  const banner = el("p", "sp-now");
+  banner.append(el("span", "sp-now-label", "Currently on"));
+  banner.append(el("strong", "", P.entries[i] ? P.entries[i].label : ""));
+  banner.append(el("span", "sp-now-dates", weekRange(0)));
+  root.append(banner);
+
+  if (earlier.length) {
+    const lastE = P.entries[i - 2] ? P.entries[i - 2].label : P.entries[i - 1].label;
+    root.append(dropdown("Earlier", "Earlier weeks (" + P.entries[0].label + " to " + lastE + ")", earlier.length + " weeks", earlier, false));
+  }
+  if (i >= 1) root.append(dropdown("Last week", label(i - 1), weekRange(-1), one(i - 1, -1), false));
+  root.append(dropdown("This week", label(i), weekRange(0), one(i, 0), true));
+  if (P.entries[i + 1]) root.append(dropdown("Next week", label(i + 1), weekRange(1), one(i + 1, 1), false));
+  root.append(el("p", "sp-foot", P.meeting + " · " + P.log));
 })();
