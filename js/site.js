@@ -4,6 +4,14 @@
   const yr = document.getElementById("year");
   if (yr) yr.textContent = new Date().getFullYear();
 
+  // ---- Open the dropdown that a #link points to ----
+  function openFromHash() {
+    const el = location.hash && document.querySelector(location.hash);
+    if (el && el.tagName === "DETAILS") el.open = true;
+  }
+  addEventListener("hashchange", openFromHash);
+  openFromHash();
+
   // ---- Starfield with small meteors falling diagonally ----
   // Meteors play even with "reduce motion" on; only the star twinkle is turned off.
   const canvas = document.getElementById("starfield");
