@@ -1058,3 +1058,64 @@ h2 {
   pointer-events: none;
   -webkit-user-drag: none;
 }
+
+/* ---- Independent study plan ---- */
+.plan-intro {
+  color: #c8d2ea;
+  max-width: 60ch;
+}
+
+.study-plan {
+  margin-top: 1.5rem;
+}
+
+.study-plan .milestone {
+  margin-bottom: 1rem;
+  padding: 1.5rem 2rem;
+}
+
+.study-plan .milestone h2 {
+  font-size: 1.4rem;
+}
+
+.sp-week {
+  padding: 0.5rem 0 1rem;
+}
+
+.sp-week + .sp-week {
+  border-top: 1px solid var(--border);
+  padding-top: 1rem;
+}
+
+.sp-week h4 {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 0.25rem 1rem;
+}
+
+.sp-week ul {
+  margin: 0 0 0.75rem;
+  padding-left: 1.2rem;
+}
+
+.sp-week li,
+.sp-week p {
+  margin: 0 0 0.4rem;
+  color: #c8d2ea;
+  font-size: 0.95rem;
+}
+
+.sp-dates {
+  font-family: "Inter", sans-serif;
+  font-size: 0.75rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+.sp-foot {
+  margin: 0.5rem 0 0;
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
