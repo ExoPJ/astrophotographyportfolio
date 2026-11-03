@@ -1119,3 +1119,30 @@ h2 {
   font-size: 0.85rem;
   color: var(--text-muted);
 }
+
+.sp-now {
+  display: inline-flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0.4rem 0.9rem;
+  margin: 0 0 1.25rem;
+  padding: 0.6rem 1.1rem;
+  border: 1px solid var(--accent);
+  border-radius: 999px;
+  background: rgba(127, 168, 255, 0.08);
+  color: var(--text);
+}
+
+.sp-now strong {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 1.3rem;
+  font-weight: 500;
+}
+
+.sp-now-label,
+.sp-now-dates {
+  font-size: 0.72rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
